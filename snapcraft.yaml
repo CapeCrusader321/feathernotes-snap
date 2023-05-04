@@ -40,7 +40,7 @@ parts:
     cmake-parameters:
       - -DCMAKE_INSTALL_PREFIX=/usr
     build-packages:
-      - build-essentials
+      - build-essential
       - qttools5-dev-tools
       - libqt5svg5-dev
       - libhunspell-dev
