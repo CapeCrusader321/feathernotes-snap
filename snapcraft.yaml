@@ -1,0 +1,60 @@
+name: feathernotes
+base: core22
+adopt-info: feathernotes
+grade: stable
+confinement: strict
+compression: lzo
+architectures:
+  - build-on: amd64
+    build-for: amd64
+
+
+slots:
+  feathernotes:
+    interface: dbus
+    bus: session
+    name: com.github.tsujan.feathernotes
+
+
+apps:
+  feathernotes
+    command: usr/bin/feathernotes
+    extensions:
+      - kde-neon
+    plugs:
+      - home
+      - raw-usb
+      - network
+      - network-status
+      - optical-drive
+      - removable-media
+    common-id: com.github.tsujan.feathernotes
+    desktop: usr/share/applications/feathernotes.desktop
+    
+    
+parts:
+  feathernotes:
+    source: https://github.com/tsujan/FeatherNotes.git
+    plugin: cmake
+    parse-info: [usr/share/metainfo/feathernotes.metainfo.xml]
+    cmake-parameters:
+      - -DCMAKE_INSTALL_PREFIX=/usr
+    build-packages:
+      - build-essentials
+      - qttools5-dev-tools
+      - libqt5svg5-dev
+      - libhunspell-dev
+      - qtbase5-dev
+      - libqt5x11extras5-dev
+      - libx11-dev
+      - libxext-dev
+    
+    build-snaps:
+      - kf5-5-105-qt-5-15-9-core22-sdk
+      - cmake
+      
+    override-pull: |
+      craftctl default
+      craftctl set version=$(git describe --tags --abbrev=0)
+      
+    
