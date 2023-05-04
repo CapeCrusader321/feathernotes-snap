@@ -17,7 +17,7 @@ slots:
 
 
 apps:
-  feathernotes
+  feathernotes:
     command: usr/bin/feathernotes
     extensions:
       - kde-neon
