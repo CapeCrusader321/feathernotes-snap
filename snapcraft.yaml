@@ -48,13 +48,17 @@ parts:
       - libqt5x11extras5-dev
       - libx11-dev
       - libxext-dev
+      - libqt5xml5
     
     build-snaps:
-      - kf5-5-105-qt-5-15-8-core22-sdk
+      - kf5-5-104-qt-5-15-8-core22-sdk
       - cmake
       
     override-pull: |
       craftctl default
       craftctl set version=$(git describe --tags --abbrev=0)
       
-    
+    stage-packages:
+      - libhunspell-1.7-0
+      - libqt5printsupport5
+      - libqt5xml5
