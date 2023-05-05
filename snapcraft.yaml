@@ -50,7 +50,7 @@ parts:
       - libxext-dev
     
     build-snaps:
-      - kf5-5-104-qt-5-15-8-core22-sdk
+      - kf5-5-105-qt-5-15-8-core22-sdk
       - cmake
       
     override-pull: |
