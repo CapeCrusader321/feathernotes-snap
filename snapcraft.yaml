@@ -59,6 +59,5 @@ parts:
       craftctl set version=$(git describe --tags --abbrev=0)
       
     stage-packages:
-      - libhunspell-1.7-0
       - libqt5printsupport5
       - libqt5xml5
