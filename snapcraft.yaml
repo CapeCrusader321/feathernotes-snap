@@ -6,7 +6,8 @@ confinement: strict
 compression: lzo
 architectures:
   - build-on: amd64
-  
+    build-for: amd64
+    
 slots:
   feathernotes:
     interface: dbus
