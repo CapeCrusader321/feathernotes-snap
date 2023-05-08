@@ -55,7 +55,4 @@ parts:
     override-pull: |
       craftctl default
       craftctl set version=$(git describe --tags --abbrev=0)
-      
-    stage-packages:
-      - libqt5printsupport5
-      - libqt5xml5
+   
