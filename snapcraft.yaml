@@ -8,11 +8,11 @@ architectures:
   - build-on: amd64
     build-for: amd64
     
-slots:
-  feathernotes:
-    interface: dbus
-    bus: session
-    name: com.github.tsujan.feathernotes
+#slots:
+  #feathernotes:
+    #interface: dbus
+    #bus: session
+    #name: com.github.tsujan.feathernotes
 
 apps:
   feathernotes:
