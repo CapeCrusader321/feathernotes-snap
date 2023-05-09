@@ -33,6 +33,7 @@ apps:
 parts:
   feathernotes:
     source: https://github.com/tsujan/FeatherNotes.git
+    after: [hunspell]
     plugin: cmake
     parse-info: [usr/share/metainfo/feathernotes.metainfo.xml]
     cmake-parameters:
@@ -43,9 +44,21 @@ parts:
     build-packages:
       - build-essential
       - libxext-dev
-      - libhunspell-dev
       - libx11-dev
     override-pull: |
       craftctl default
       craftctl set version=$(git describe --tags --abbrev=0)
    
+  hunspell:
+    source: https://github.com/hunspell/hunspell.git
+    source-tag: 'v1.7.2'
+    plugin: make
+    build-packages:
+      - build-essential
+      - autoconf 
+      - automake 
+      - autopoint 
+      - libtool
+    override-prime: |
+      craftctl default
+      ldconfig
