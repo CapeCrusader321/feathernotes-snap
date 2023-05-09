@@ -45,6 +45,7 @@ parts:
       - build-essential
       - libxext-dev
       - libx11-dev
+      - qtbase5-dev
     override-pull: |
       craftctl default
       craftctl set version=$(git describe --tags --abbrev=0)
