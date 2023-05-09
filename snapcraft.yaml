@@ -37,6 +37,8 @@ parts:
     parse-info: [usr/share/metainfo/feathernotes.metainfo.xml]
     cmake-parameters:
       - -DCMAKE_INSTALL_PREFIX=/usr
+    build-snaps:
+      - kf5-5-105-qt-5-15-9-core22-sdk  
     build-packages:
       - build-essential
       - libhunspell-dev
