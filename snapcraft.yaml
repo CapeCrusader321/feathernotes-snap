@@ -39,6 +39,7 @@ parts:
       - -DCMAKE_INSTALL_PREFIX=/usr
     build-packages:
       - build-essential
+      - libhunspell-dev
     build-snaps:
       - kf5-5-104-qt-5-15-8-core22-sdk
     override-pull: |
