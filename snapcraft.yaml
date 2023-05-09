@@ -52,7 +52,7 @@ parts:
   hunspell:
     source: https://github.com/hunspell/hunspell.git
     source-tag: 'v1.7.2'
-    plugin: make
+    plugin: autotools
     build-packages:
       - build-essential
       - autoconf 
