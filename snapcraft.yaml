@@ -36,13 +36,15 @@ parts:
     plugin: cmake
     parse-info: [usr/share/metainfo/feathernotes.metainfo.xml]
     cmake-parameters:
-      - -DCMAKE_INSTALL_PREFIX=/usr  
+      - -DCMAKE_INSTALL_PREFIX=/usr
+    build-snaps:
+      - kf5-5-104-qt-5-15-8-core22-sdk
+      - cmake
     build-packages:
       - build-essential
       - libxext-dev
       - libhunspell-dev
       - libx11-dev
-      - libxext-dev
     override-pull: |
       craftctl default
       craftctl set version=$(git describe --tags --abbrev=0)
