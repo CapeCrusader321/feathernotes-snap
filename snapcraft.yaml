@@ -8,11 +8,11 @@ architectures:
   - build-on: amd64
     build-for: amd64
     
-#slots:
-  #feathernotes:
-    #interface: dbus
-    #bus: session
-    #name: com.github.tsujan.feathernotes
+slots:
+  feathernotes:
+    interface: dbus
+    bus: session
+    name: com.github.tsujan.feathernotes
 
 apps:
   feathernotes:
@@ -39,19 +39,8 @@ parts:
       - -DCMAKE_INSTALL_PREFIX=/usr
     build-packages:
       - build-essential
-      - qttools5-dev-tools
-      - libqt5svg5-dev
-      - libhunspell-dev
-      - qtbase5-dev
-      - libqt5x11extras5-dev
-      - libx11-dev
-      - libxext-dev
-      - libqt5xml5
-    
     build-snaps:
-      - kf5-5-105-qt-5-15-9-core22-sdk
-      - cmake
-      
+      - kf5-5-104-qt-5-15-8-core22-sdk
     override-pull: |
       craftctl default
       craftctl set version=$(git describe --tags --abbrev=0)
