@@ -41,7 +41,7 @@ parts:
       - build-essential
       - libhunspell-dev
     build-snaps:
-      - kf5-5-104-qt-5-15-8-core22-sdk
+      - kf5-5-105-qt-5-15-9-core22-sdk
     override-pull: |
       craftctl default
       craftctl set version=$(git describe --tags --abbrev=0)
