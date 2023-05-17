@@ -48,7 +48,7 @@ parts:
       - qtbase5-dev
     override-pull: |
       craftctl default
-      craftctl set version=$(git describe --tags --abbrev=0)
+      craftctl set version=$(git describe --tags --abbrev=0 | cut -c 2-)
    
   hunspell:
     source: https://github.com/hunspell/hunspell.git
