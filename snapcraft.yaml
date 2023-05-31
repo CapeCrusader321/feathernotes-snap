@@ -38,7 +38,6 @@ apps:
 parts:
   feathernotes:
     source: https://github.com/tsujan/FeatherNotes.git
-    after: [hunspell]
     plugin: cmake
     parse-info: [usr/share/metainfo/feathernotes.metainfo.xml]
     cmake-parameters:
@@ -50,6 +49,7 @@ parts:
       - libxext-dev
       - libx11-dev
       - qtbase5-dev
+      - libhunspell-dev
     override-pull: |
       craftctl default
       craftctl set version=$(git describe --tags --abbrev=0 | cut -c 2-)
