@@ -12,7 +12,16 @@ layout:
   /usr/share/qt5:
     symlink: $SNAP/kf5/usr/share/qt5
   /usr/share/X11:
-    symlink: $SNAP/kf5/usr/share/X11   
+    symlink: $SNAP/kf5/usr/share/X11
+  /usr/lib/$CRAFT_ARCH_TRIPLET/libhunspell-1.7.so.0:
+    symlink: $SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET/libhunspell-1.7.so.0
+  /usr/lib/$CRAFT_ARCH_TRIPLET/libXext.so.6:
+    symlink: $SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET/libXext.so.6  
+  /usr/lib/$CRAFT_ARCH_TRIPLET/libEGL.so.1:
+    symlink: $SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET/libEGL.so.1
+  /usr/lib/$CRAFT_ARCH_TRIPLET/libGL.so.1:
+    symlink: $SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET/libGL.so.1
+    
   
 slots:
   feathernotes:
@@ -54,3 +63,5 @@ parts:
       craftctl default
       craftctl set version=$(git describe --tags --abbrev=0 | cut -c 2-)
   
+
+   
