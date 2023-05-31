@@ -7,7 +7,13 @@ compression: lzo
 architectures:
   - build-on: amd64
     build-for: amd64
-
+    
+layout:
+  /usr/share/qt5:
+    symlink: $SNAP/kf5/usr/share/qt5
+  /usr/share/X11:
+    symlink: $SNAP/kf5/usr/share/X11   
+  
 slots:
   feathernotes:
     interface: dbus
@@ -21,7 +27,6 @@ apps:
       - kde-neon
     plugs:
       - home
-      - raw-usb
       - network
       - network-status
       - optical-drive
@@ -39,7 +44,6 @@ parts:
     cmake-parameters:
       - -DCMAKE_INSTALL_PREFIX=/usr
     build-snaps:
-      - kf5-5-104-qt-5-15-8-core22-sdk
       - cmake
     build-packages:
       - build-essential
@@ -49,17 +53,4 @@ parts:
     override-pull: |
       craftctl default
       craftctl set version=$(git describe --tags --abbrev=0 | cut -c 2-)
-   
-  hunspell:
-    source: https://github.com/hunspell/hunspell.git
-    source-tag: 'v1.7.2'
-    plugin: autotools
-    build-packages:
-      - build-essential
-      - autoconf 
-      - automake 
-      - autopoint 
-      - libtool
-    override-prime: |
-      craftctl default
-      ldconfig
+  
