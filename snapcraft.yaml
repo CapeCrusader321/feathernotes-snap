@@ -21,7 +21,8 @@ layout:
     symlink: $SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET/libEGL.so.1
   /usr/lib/$CRAFT_ARCH_TRIPLET/libGL.so.1:
     symlink: $SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET/libGL.so.1
-    
+  /usr/lib/$CRAFT_ARCH_TRIPLET/libX11.so.6:
+    symlink: $SNAP/kf5/usr/lib/$CRAFT_ARCH_TRIPLET/libX11.so.6  
   
 slots:
   feathernotes:
